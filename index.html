@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="theme-color" content="#5b1717">
+<title>காதணி விழா அழைப்பிதழ்</title>
+<style>
+html,body{margin:0;padding:0;background:#111}
+body{text-align:center;font-family:Arial,sans-serif}
+img{display:block;width:100%;height:auto;margin:0 auto}
+.bar{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;width:94%;max-width:560px;z-index:5}
+button,a{border:0;border-radius:28px;padding:13px 18px;font-size:16px;font-weight:bold;text-decoration:none;box-shadow:0 3px 12px #0008}
+button{background:#6d1717;color:#fff;flex:1}
+a{background:#e0aa18;color:#111;flex:1}
+</style>
+</head>
+<body>
+<img src="invitation.jpg" alt="காதணி விழா அழைப்பிதழ்">
+<div class="bar">
+<button id="music" onclick="playMusic()">▶ Music</button>
+<a href="https://maps.app.goo.gl/NqXbo4os2rM3Xdpu5" target="_blank" rel="noopener">📍 Location</a>
+</div>
+<audio id="audio" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+<script>
+const a=document.getElementById('audio'), b=document.getElementById('music');
+function playMusic(){
+ if(a.paused){a.play().then(()=>b.textContent='⏸ Music').catch(()=>alert('Music தொடங்க மீண்டும் Music அழுத்தவும்'));}
+ else{a.pause();b.textContent='▶ Music';}
+}
+</script>
+</body>
+</html>
